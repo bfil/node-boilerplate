@@ -1,0 +1,5 @@
+{
+	"staticBaseUrl": "http://localhost:8000/",
+	"stylesheets": "css",
+	"port": 8080
+}

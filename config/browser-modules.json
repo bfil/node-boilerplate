@@ -1,0 +1,15 @@
+{
+	"node-boilerplate": {
+	    "name": "libs/almond",
+	    "out": "node-boilerplate.js",
+	    "has": {
+	    	"something": true
+	    },
+	    "include": [
+	    	"main"
+	    ],
+	    "insertRequire": [
+	    	"main"
+	    ]
+	}
+}

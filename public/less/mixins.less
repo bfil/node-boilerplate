@@ -1,0 +1,21 @@
+.gradient(@from, @to) {
+  background-image: -moz-linear-gradient(top, @from, @to);
+  background-image: -ms-linear-gradient(top, @from, @to);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@from), to(@to));
+  background-image: -webkit-linear-gradient(top, @from, @to);
+  background-image: -o-linear-gradient(top, @from, @to);
+  background-image: linear-gradient(top, @from, @to);
+}
+
+.box-shadow (@shadow1, @shadow2: transparent 0 0 0 ) {
+  -moz-box-shadow: @shadow1, @shadow2;
+  -webkit-box-shadow: @shadow1, @shadow2;
+  box-shadow: @shadow1, @shadow2;
+}
+
+.enable-transitions(@which:all, @time:0.5s, @animation:ease-in-out) {
+  transition: @which @time @animation;
+  -o-transition: @which @time @animation;
+  -moz-transition: @which @time @animation;
+  -webkit-transition: @which @time @animation;
+}

@@ -1,0 +1,86 @@
+{
+	"lint": {
+		"node": [ "grunt.js", "src/**/*.js" ],
+		"browser": [ "public/js/src/**/*.js" ],
+		"tasks" : [ "tasks/*.js" ],
+		"tests" : [ "test/**/*.js" ]
+	},
+	"jshint": {
+		"options": {
+			"curly": true,
+			"eqeqeq": true,
+			"immed": true,
+			"latedef": true,
+			"newcap": true,
+			"noarg": true,
+			"sub": false,
+			"undef": true,
+			"eqnull": true,
+			"browser": true,
+			"boss": true,
+			"node": true,
+			"es5": true
+		},
+		"globals": {},
+		"browser": {
+			"globals": {
+				"define": true,
+				"has": true
+			}
+		},
+		"tasks": {
+			"globals": {
+				"should": true
+			}
+		},
+		"tests": {
+			"globals": {
+				"describe": true,
+				"it": true
+			}
+		}
+	},
+	"min": {
+		"require": {
+			"src": ["public/js/libs/require.js", "public/js/libs/has.js"],
+			"dest": "public/js/libs/require.min.js"
+		}
+	},
+	"less": {
+		"all": {
+			"src": ["public/less/main.less"]
+		}
+	},
+	"build": {
+		"debug": {
+		    "baseUrl": "public/js/src",
+		    "paths": {
+		    	"libs": "../libs"
+		    },
+		    "deployFolder": "public/js/dist",
+		    "optimize": "uglify",
+		    "uglify": {
+		        "beautify": true,
+		        "mangle": false
+		    },
+		    "preserveLicenseComments": false
+		},
+		"release": {
+		    "baseUrl": "public/js/src",
+		    "paths": {
+		    	"libs": "../libs"
+		    },
+		    "deployFolder": "public/js/dist",
+		    "uglify": {
+		        "max_line_length": 240
+		    },
+		    "preserveLicenseComments": false
+		}
+	},
+	"watch": {
+		"scripts": {
+			"files": [ "src/**/*.js", "public/js/modules/*.js", "tasks/*.js", "test/**/*.js"],
+			"tasks": "lint test"
+		}
+	}
+}

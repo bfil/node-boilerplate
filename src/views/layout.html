@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Node Boilerplate</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	{% if devMode %}
+	<link rel="stylesheet/less" type="text/css" href="/less/main.less" />
+	<script src="/js/libs/less.js"></script>
+	<script src="/js/libs/require.js"></script>
+	<script src="/js/libs/has.js"></script>
+	<script>
+	require(['has'], function(has) {
+		window.has = has;
+	});
+	require.config({
+		baseUrl : "/js/src/"
+	});
+	require(['main'], function() {});
+	</script>
+	{% else %}
+	<script src="/js/dist/node-boilerplate.min.js"></script>
+	{% endif %}
+</head>
+<body>
+
+	<div id="page-wrapper">
+
+		<header class="span12">
+			<div class="inner cf">
+				<h1 class="span8">
+					<p id="logo">Node Boilerplate</p>
+				</h1>
+				<nav class="span4 col">
+					<ul class="cf">
+						<li><a href="/">Home</a></li>
+						<li><a href="#">Section A</a></li>
+						<li><a href="#">Section B</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<div id="container" class="cf">  
+
+			<article id="#content" class="span8">
+				<section>
+					{% block content %}
+					{% endblock %}
+				</section>
+			</article>
+
+			<aside id="sidebar" class="span4 col">
+				<h2>Sidebar</h2>
+				<p>
+					Some sidebar content.
+				</p>
+			</aside>
+		</div>
+
+		<footer class="span12">
+			<div class="inner cf">
+				<aside class="span8">
+					<p>engineered by <a href="http://b-fil.com" target="_blank" class="link">Bruno Filippone</a></p>
+				</aside>
+				<p class="span4 col">© 2013 Bruno Filippone</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

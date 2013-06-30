@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test Runner</title>
+		<link rel="stylesheet" href="/css/mocha.css" />
+		<script src="/js/libs/mocha.js"></script>
+		<script src="/js/libs/chai.js"></script>
+		<script src="/js/libs/require.js"></script>
+		<script src="/js/libs/has.js"></script>
+		<script>
+            mocha.setup('bdd');
+            mocha.setup({ ignoreLeaks: false });
+            
+            chai.should();
+            
+            require.config({
+                baseUrl : "/js/src/"
+            });
+            require(['has'], function(has) {
+                window.has = has;
+            });
+		</script>
+		{% for script in scripts %}
+		<script src="test/{{ script }}"></script>
+		{% endfor %}
+		<script>
+            onload = function() {
+                if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+                else { mocha.run(); }
+            };
+		</script>
+	</head>
+	<body>
+		<div id="mocha"></div>
+	</body>
+</html>

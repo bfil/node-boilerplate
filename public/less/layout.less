@@ -1,0 +1,102 @@
+#container, .inner{
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: block;
+}
+
+header{
+  
+}
+
+#container {
+  clear: both;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+nav{
+  margin: 7px 0 7px 0;
+}
+
+nav ul{
+  text-align: right;
+  overflow: auto;
+  width: 100%;
+}
+
+nav ul li{
+  margin: 0px;
+  text-align: center;
+  overflow: auto;
+  float: left;
+  width: 33%;
+}
+
+nav a{
+  text-decoration: none;
+  display: block;
+  padding: 7px 0 7px 5%;
+  margin: 0 0 0 4%;
+}
+
+@media screen and (max-width: 768px){
+  nav .span4{
+    width: 100%;
+  }
+
+  .span8, article{
+    width: 100%;
+  }
+
+  .span4, aside{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #container, .inner{
+    width: 90%;
+    padding: 0px 5% 0px 5%;
+  }
+
+  #container {
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  nav ul li{
+    width: 100%;
+    margin: 0 0 5px 0;
+  }
+
+  nav a{
+    margin: 0;
+    padding: 14px 0 14px 0;
+  }
+}
+
+
+/* Clearfix
+
+If you want the clearfix to remain within CSS (no classes in markup) then use the @extend method:
+
+  selector{
+		@extend .clearfix();
+  }
+
+*/
+
+.cf {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    container: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

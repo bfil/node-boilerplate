@@ -1,0 +1,75 @@
+@totalColumns: 12;
+@gutterWidth: 1.5%;
+
+.spanWidth(@numColumns, @totalColumns, @gutterWidth) {
+	@numGutters: @totalColumns - 1; // Gutters will always be 1 less then columns
+	@gutterSpace: @numGutters * @gutterWidth; // Finding total space taken up by gutters
+	@remainingSpace: 100 - @gutterSpace; // Subtracting the total gutter space from 100(%)
+	@columnWidth: @remainingSpace / @totalColumns; // Finding column width by dividing space left by number of columns
+	@width: (@numColumns) * @columnWidth + (@gutterWidth * (@numColumns - 1) );
+	width: @width;
+}
+
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12{
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.col{
+  margin-left: 1.5%;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+}
+
+.span1{
+  .spanWidth(1, @totalColumns, @gutterWidth);
+  
+}
+.span2{
+  .spanWidth(2, @totalColumns, @gutterWidth);
+  
+}
+.span3{
+  .spanWidth(3, @totalColumns, @gutterWidth);
+  
+}
+.span4{
+  .spanWidth(4, @totalColumns, @gutterWidth);
+  
+}
+.span5{
+  .spanWidth(5, @totalColumns, @gutterWidth);
+  
+}
+.span6{
+  .spanWidth(6, @totalColumns, @gutterWidth);
+  
+}
+.span7{
+  .spanWidth(7, @totalColumns, @gutterWidth);
+  
+}
+.span8{
+  .spanWidth(8, @totalColumns, @gutterWidth);
+  
+}
+.span9{
+  .spanWidth(9, @totalColumns, @gutterWidth);
+  
+}
+.span10{
+  .spanWidth(10, @totalColumns, @gutterWidth);
+  
+}
+.span11{
+  .spanWidth(11, @totalColumns, @gutterWidth);
+  
+}
+.span12{
+  .spanWidth(12, @totalColumns, @gutterWidth);
+  margin-left: 0;
+}
