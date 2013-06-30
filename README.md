@@ -14,6 +14,7 @@ Node.js Boilerplate Project.
  - Easy development / production mode configurations
  - Build scripts to generate JS and CSS prod-ready files
  - A separate test-server in the tools directory that can be run standalone
+ - Basic layout with responsive grid system
 
 How to use
 ----------
@@ -39,6 +40,11 @@ The test folder contains 3 types of tests:
  - browser: client side javascript unit tests
  - node: server side unit tests
  - casperjs: CasperJS test scripts
+
+Feedback
+--------
+
+Please, report any issue or other nice-to-have features.
 
 License
 -------
