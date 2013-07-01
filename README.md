@@ -21,7 +21,7 @@ How to use
 
 In the project directory, run 'npm install' to install project dependencies.
 
-Install grunt: 'npm install -g grunt@0.3.17' (Grunt 0.4+ is not supported by the project yet)
+Install grunt: 'npm install -g grunt@0.3.17' (Grunt 0.4+ is not supported by the project yet).
 
 Run 'grunt help' to get a list of the supported tasks.
 
@@ -37,7 +37,7 @@ Unit tests
 
 To run the client side tests and the unit tests PhantomJS and CasperJS need to be installed.
 
-Mocha-PhantomJS is also needed: us 'npm install -g mocha-phantomjs' to install it.
+Mocha-PhantomJS is also needed: use 'npm install -g mocha-phantomjs' to install it.
 
 The test folder contains 3 types of tests:
 
