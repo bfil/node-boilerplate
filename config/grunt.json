@@ -1,11 +1,37 @@
 {
-	"lint": {
-		"node": [ "grunt.js", "src/**/*.js" ],
-		"browser": [ "public/js/src/**/*.js" ],
-		"tasks" : [ "tasks/*.js" ],
-		"tests" : [ "test/**/*.js" ]
-	},
 	"jshint": {
+		"node" : {
+			"src": [ "grunt.js", "src/**/*.js" ],
+			"options": {
+				"globals": {}
+			}
+		},
+		"browser" : {
+			"src": [ "public/js/src/**/*.js" ],
+			"options": {
+				"globals": {
+					"define": true,
+					"has": true
+				}
+			}
+		},
+		"tasks" : {
+			"src": [ "tasks/*.js" ],
+			"options": {
+				"globals": {
+					"should": true
+				}
+			}
+		},
+		"tests" : {
+			"src": [ "test/**/*.js" ],
+			"options": {
+				"globals": {
+					"describe": true,
+					"it": true
+				}
+			}
+		},
 		"options": {
 			"curly": true,
 			"eqeqeq": true,
@@ -19,28 +45,10 @@
 			"browser": true,
 			"boss": true,
 			"node": true,
-			"es5": true
-		},
-		"globals": {},
-		"browser": {
-			"globals": {
-				"define": true,
-				"has": true
-			}
-		},
-		"tasks": {
-			"globals": {
-				"should": true
-			}
-		},
-		"tests": {
-			"globals": {
-				"describe": true,
-				"it": true
-			}
-		}
+			"globals": {}
+		}		
 	},
-	"min": {
+	"uglify": {
 		"require": {
 			"src": ["public/js/libs/require.js", "public/js/libs/has.js"],
 			"dest": "public/js/libs/require.min.js"
@@ -80,7 +88,7 @@
 	"watch": {
 		"scripts": {
 			"files": [ "src/**/*.js", "public/js/modules/*.js", "tasks/*.js", "test/**/*.js"],
-			"tasks": "lint test"
+			"tasks": ["jshint", "test"]
 		}
 	}
 }

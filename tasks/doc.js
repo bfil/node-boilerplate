@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         rimraf('./doc', function() {
 
             console.log('Generating node docs...');
-            grunt.helper('jsdoc3', './src/', './doc/node', './src/README.md', function(err) {
+            jsDoc3('./src/', './doc/node', './src/README.md', function(err) {
 
                 if(err) {
                     console.error(err.toString());
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
                 else {
 
                     console.log('Generating browser docs...');
-                    grunt.helper('jsdoc3', './public/js/src', './doc/browser', './public/js/src/README.md', function(err) {
+                    jsDoc3('./public/js/src', './doc/browser', './public/js/src/README.md', function(err) {
 
                         if(err) {
                             console.error(err.toString());
@@ -36,12 +36,12 @@ module.exports = function(grunt) {
         });        
     });
 
-    grunt.registerHelper('jsdoc3', function( sourceDir, docDir, readmeFilePath, callback ) {
+    function jsDoc3( sourceDir, docDir, readmeFilePath, callback ) {
         
         exec('tools/jsdoc3/jsdoc -d ' + docDir + ' ' + sourceDir + ' ' + readmeFilePath + ' -r',
             function(error, stdout, stderr) {
                 callback(error);                
             }
         );
-    });
+    }
 }; 

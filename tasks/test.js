@@ -14,7 +14,7 @@ module.exports = function(grunt){
         var done = this.async(),
             should = require('chai').should();
         
-        var filepaths = grunt.file.expandFiles('test/node/*.js');
+        var filepaths = grunt.file.expand('test/node/*.js');
         filepaths.forEach(function(filepath) {
             mocha.addFile(filepath);
         });
@@ -30,7 +30,7 @@ module.exports = function(grunt){
             testServer = require(process.cwd() + '/tools/test-server/server.js');
         
         testServer.start(function() {
-            grunt.helper('mocha-phantomjs', {
+            mochaPhantomJs({
                 args : ['http://localhost:' + testServer.DEFAULT_PORT + '/test'],
                 done : function(err) {
                     testServer.stop();
@@ -47,11 +47,11 @@ module.exports = function(grunt){
         var done = this.async(),
             appServer = require(process.cwd() + '/src/server.js');
 
-        var filepaths = grunt.file.expandFiles('test/casperjs/*.js'),
+        var filepaths = grunt.file.expand('test/casperjs/*.js'),
             testsExecuted = 0;
 
         function executeTest( i ) {
-            grunt.helper('casperjs', {
+            casperJs({
                 args : [ filepaths[i] ],
                 done : testExecuted
             });
@@ -85,7 +85,7 @@ module.exports = function(grunt){
 
     // Helpers
 
-    grunt.registerHelper('mocha-phantomjs', function(options) {
+    function mochaPhantomJs(options) {
 
         var mochaPhantomJS = spawn('mocha-phantomjs', options.args, { stdio: 'inherit' });
 
@@ -103,9 +103,9 @@ module.exports = function(grunt){
 
             options.done(code);
         });
-    });
+    }
 
-    grunt.registerHelper('casperjs', function(options) {
+    function casperJs(options) {
 
         var casperjs = spawn('casperjs', options.args, { stdio: 'inherit' });
 
@@ -123,5 +123,5 @@ module.exports = function(grunt){
 
             options.done(code);
         });
-    });
+    }
 };

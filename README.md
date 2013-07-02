@@ -21,16 +21,16 @@ How to use
 
 In the project directory, run 'npm install' to install project dependencies.
 
-Install grunt: 'npm install -g grunt@0.3.17' (Grunt 0.4+ is not supported by the project yet).
+Install grunt CLI: 'npm install -g grunt-cli'.
 
 Run 'grunt help' to get a list of the supported tasks.
 
 Running the server
 ------------------
 
-Use 'grunt dev' to run the server in development mode and browse to: http://localhost:8000
+Use 'grunt dev' to run the server in development mode and browse to: http://localhost:8000.
 
-Use 'grunt server' to run the server in production mode and browse to: http://localhost:8080
+Use 'grunt server' to run the server in production mode and browse to: http://localhost:8080.
 
 Unit tests
 ----------

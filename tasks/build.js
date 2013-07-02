@@ -44,21 +44,21 @@ module.exports = function(grunt){
     
     grunt.registerTask('build:all', 'Builds the project.', function() {
         
-        grunt.helper('buildModules', true);
-        grunt.helper('buildModules', false);
+        buildModules(true);
+        buildModules(false);
     });
     
     grunt.registerTask('build:debug', 'Builds the project (debug).', function() {
         
-        grunt.helper('buildModules', true);
+        buildModules(true);
     });
     
     grunt.registerTask('build:release', 'Builds the project (release).', function() {
         
-        grunt.helper('buildModules', false);
+        buildModules(false);
     });
     
-    grunt.registerHelper('buildModules', function(debug) {
+    function buildModules(debug) {
         
         for(var i in modulesConfig) {
             
@@ -68,5 +68,5 @@ module.exports = function(grunt){
 
             requirejs.optimize(config);
         }   
-    });
+    }
 };

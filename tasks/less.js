@@ -6,7 +6,7 @@ module.exports = function(grunt){
     grunt.registerMultiTask('less', 'Compiles less stylesheets.', function() {
         var done = this.async();
 
-        var filepaths = grunt.file.expandFiles(this.file.src),
+        var filepaths = grunt.file.expand(this.filesSrc),
             compiledCount = 0,
             parser = new(less.Parser)({
                 paths: [ './public/less' ]
