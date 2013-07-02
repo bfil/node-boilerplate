@@ -13,7 +13,7 @@ module.exports = function(grunt){
         console.log('   grunt build:all      - build the browser modules (debug and release versions)');
         console.log('   grunt build:debug    - build the debug version of the browser modules');
         console.log('   grunt build:release  - build the release version of the browser modules');
-        console.log('   grunt watch          - watches source files and on changes runs: lint, test');
+        console.log('   grunt watch          - watches source files and on changes runs: jshint, test');
         console.log('   grunt server:dev     - runs the server in development mode');
         console.log('   grunt server:prod    - runs the server in production mode');
         console.log('   grunt server:test    - runs the test server');
@@ -23,7 +23,7 @@ module.exports = function(grunt){
         console.log('   grunt build          - alias for: less, uglify, build:all');
         console.log('   grunt dev            - alias for: server:dev');
         console.log('   grunt server         - alias for: server:prod');
-        console.log('   grunt                - alias for: lint, test, build, doc');
+        console.log('   grunt                - alias for: jshint, test, build, doc');
         console.log('');
     });
 };
